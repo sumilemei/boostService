@@ -14,9 +14,9 @@ spring:
       - com.baomidou.dynamic.datasource.spring.boot.autoconfigure.DynamicDataSourceAutoConfiguration
   #数据库的配置
   datasource:
-    url: jdbc:postgresql://43.138.62.81:5432/postgres
+    url: jdbc:postgresql://1.94.62.124:5432/postgres
     username: postgres
-    password: postgres
+    password: Njzf1984!(*$!!!
     driver-class-name: org.postgresql.Driver
     druid:
       stat-view-servlet:
