@@ -2,7 +2,7 @@
 # spring
 # ===================================================================
 server:
-  port: 18088
+  port: 18089
 
 
 spring:
@@ -12,6 +12,9 @@ spring:
     exclude:
       - com.alibaba.druid.spring.boot.autoconfigure.DruidDataSourceAutoConfigure
       - com.baomidou.dynamic.datasource.spring.boot.autoconfigure.DynamicDataSourceAutoConfiguration
+  elasticsearch:
+    rest:
+      uris: http://1.94.62.124:9200
   #数据库的配置
   datasource:
     url: jdbc:postgresql://1.94.62.124:5432/postgres
