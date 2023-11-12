@@ -89,7 +89,7 @@ sys:
 mybatis-plus:
   mapper-locations: classpath:/mapper/common/**/*.xml
   type-aliases-package: com.taoz.**.entity
-  type-aliases-super-type: com.taoz.issdc.iss.entity.BaseEntity
+  type-aliases-super-type: com.taoz.boost.iss.entity.BaseEntity
   global-config:
     #不打印banner
     banner: false

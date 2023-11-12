@@ -189,7 +189,7 @@
                 <groupId>org.springframework.boot</groupId>
                 <artifactId>spring-boot-maven-plugin</artifactId>
                 <configuration>
-                    <mainClass>com.taoz.issdc.Application</mainClass>
+                    <mainClass>com.taoz.boost.Application</mainClass>
                 </configuration>
             </plugin>
             <plugin>

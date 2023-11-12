@@ -1,9 +1,8 @@
-package com.taoz.issdc.iss.entity;
+package com.taoz.boost.iss.entity;
 
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
-import sun.rmi.runtime.Log;
 
 /**
  * @author taozheng

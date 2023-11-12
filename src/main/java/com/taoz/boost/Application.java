@@ -1,4 +1,4 @@
-package com.taoz.issdc;
+package com.taoz.boost;
 
 
 import org.mybatis.spring.annotation.MapperScan;

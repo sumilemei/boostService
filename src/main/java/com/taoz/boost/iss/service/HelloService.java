@@ -1,6 +1,6 @@
-package com.taoz.issdc.iss.service;
+package com.taoz.boost.iss.service;
 
-import com.taoz.issdc.iss.dao.HelloDao;
+import com.taoz.boost.iss.dao.HelloDao;
 import org.springframework.stereotype.Service;
 
 import javax.annotation.Resource;

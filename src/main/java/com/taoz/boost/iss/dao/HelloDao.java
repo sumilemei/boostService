@@ -1,4 +1,4 @@
-package com.taoz.issdc.iss.dao;
+package com.taoz.boost.iss.dao;
 
 import org.springframework.stereotype.Repository;
 

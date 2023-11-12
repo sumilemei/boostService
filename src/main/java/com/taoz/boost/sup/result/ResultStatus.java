@@ -1,4 +1,4 @@
-package com.taoz.issdc.sup.result;
+package com.taoz.boost.sup.result;
 
 /**
  * @author taozheng

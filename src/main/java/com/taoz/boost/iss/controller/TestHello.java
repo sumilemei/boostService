@@ -1,8 +1,8 @@
-package com.taoz.issdc.iss.controller;
+package com.taoz.boost.iss.controller;
 
 import com.alibaba.fastjson.JSON;
-import com.taoz.issdc.iss.entity.People;
-import com.taoz.issdc.iss.service.HelloService;
+import com.taoz.boost.iss.entity.People;
+import com.taoz.boost.iss.service.HelloService;
 import org.springframework.data.redis.core.StringRedisTemplate;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;

@@ -3,7 +3,7 @@
 // (powered by Fernflower decompiler)
 //
 
-package com.taoz.issdc.iss.entity;
+package com.taoz.boost.iss.entity;
 
 import com.baomidou.mybatisplus.annotation.FieldFill;
 import com.baomidou.mybatisplus.annotation.TableField;

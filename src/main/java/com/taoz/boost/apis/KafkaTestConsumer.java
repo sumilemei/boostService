@@ -1,4 +1,4 @@
-package com.taoz.issdc.apis;
+package com.taoz.boost.apis;
 
 import org.apache.kafka.clients.consumer.ConsumerConfig;
 import org.apache.kafka.clients.consumer.ConsumerRecord;
