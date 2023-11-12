@@ -12,7 +12,7 @@ import org.springframework.kafka.annotation.EnableKafka;
 @EnableKafka
 @SpringBootApplication
 @MapperScan(basePackages = {
-        "com.taoz.issdc.**.dao"
+        "com.taoz.boost.**.dao"
 })
 public class Application {
 

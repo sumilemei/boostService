@@ -2,7 +2,10 @@ package com.taoz.boost.iss.controller;
 
 import com.alibaba.fastjson.JSON;
 import com.taoz.boost.iss.entity.People;
+import com.taoz.boost.iss.service.EsBaseService;
 import com.taoz.boost.iss.service.HelloService;
+import com.taoz.boost.sup.result.Result;
+import com.taoz.boost.iss.entity.EsIndexMappingsConstant;
 import org.springframework.data.redis.core.StringRedisTemplate;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
@@ -25,11 +28,20 @@ public class TestHello {
     private HelloService helloService;
     @Resource
     private StringRedisTemplate stringRedisTemplate;
+    @Resource
+    private EsBaseService esBaseService;
+
     @RequestMapping("name")
     public String result(){
         String name = helloService.getNmae();
         System.out.println("这里是："+name);
         return "哈哈哈哈,"+name+"恭喜boost项目启动成功！！！";
+    }
+
+    @RequestMapping("esBase")
+    public Result esResult(){
+        esBaseService.createIndex("nba",EsIndexMappingsConstant.NBA_MAPPINGS);
+        return new Result("成功了");
     }
 
     @RequestMapping("redis")

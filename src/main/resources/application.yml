@@ -7,7 +7,7 @@ server:
 
 spring:
   application:
-    name: iss-dc-service
+    name: boost-service
   autoconfigure:
     exclude:
       - com.alibaba.druid.spring.boot.autoconfigure.DruidDataSourceAutoConfigure
