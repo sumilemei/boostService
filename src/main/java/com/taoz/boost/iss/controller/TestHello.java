@@ -39,9 +39,17 @@ public class TestHello {
     }
 
     @RequestMapping("esBase")
-    public Result esResult(){
-        esBaseService.createIndex("nba",EsIndexMappingsConstant.NBA_MAPPINGS);
-        return new Result("成功了");
+    public String esResult(){
+        //esBaseService.createIndex("test",EsIndexMappingsConstant.TEST_MAPPING);
+        String test = esBaseService.existIndex("test");
+        System.out.println(test);
+        //esBaseService.deleteIndex("test");
+        return "成功了";
+    }
+
+    @RequestMapping("esDocument")
+    public void esDocument(){
+        esBaseService.addDocument();
     }
 
     @RequestMapping("redis")
