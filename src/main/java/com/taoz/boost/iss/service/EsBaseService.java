@@ -6,9 +6,11 @@ import com.taoz.boost.iss.entity.Hotel;
 import com.taoz.boost.iss.entity.HotelDoc;
 import lombok.extern.slf4j.Slf4j;
 import org.elasticsearch.action.admin.indices.delete.DeleteIndexRequest;
+import org.elasticsearch.action.delete.DeleteRequest;
 import org.elasticsearch.action.get.GetRequest;
 import org.elasticsearch.action.get.GetResponse;
 import org.elasticsearch.action.index.IndexRequest;
+import org.elasticsearch.action.update.UpdateRequest;
 import org.elasticsearch.client.RequestOptions;
 import org.elasticsearch.client.RestHighLevelClient;
 import org.elasticsearch.client.indices.CreateIndexRequest;
@@ -86,4 +88,27 @@ public class EsBaseService {
         String document = documentFields.getSourceAsString();
         return document;
     }
+
+    public void updateDocument(){
+        UpdateRequest updateRequest = new UpdateRequest("hotel","61075");
+        updateRequest.doc(
+                "brand","桔子水晶",
+                "score",49
+        );
+        try {
+            client.update(updateRequest,RequestOptions.DEFAULT);
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+    }
+
+    public void deleteDocument(){
+        DeleteRequest deleteRequest = new DeleteRequest("hotel","61075");
+        try {
+            client.delete(deleteRequest,RequestOptions.DEFAULT);
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+    }
+
 }

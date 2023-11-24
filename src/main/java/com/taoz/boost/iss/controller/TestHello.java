@@ -49,7 +49,7 @@ public class TestHello {
 
     @RequestMapping("esDocument")
     public void esDocument(){
-        esBaseService.getDocument();
+        esBaseService.deleteDocument();
     }
 
     @RequestMapping("redis")
