@@ -15,7 +15,7 @@ public class HelloService {
     @Resource
     private HelloDao helloDao;
 
-    public String getNmae(){
+    public String getName(){
         return helloDao.TestHello();
     }
 }

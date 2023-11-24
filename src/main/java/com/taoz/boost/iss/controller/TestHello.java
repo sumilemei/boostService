@@ -33,7 +33,7 @@ public class TestHello {
 
     @RequestMapping("name")
     public String result(){
-        String name = helloService.getNmae();
+        String name = helloService.getName();
         System.out.println("这里是："+name);
         return "哈哈哈哈,"+name+"恭喜boost项目启动成功！！！";
     }
@@ -49,7 +49,7 @@ public class TestHello {
 
     @RequestMapping("esDocument")
     public void esDocument(){
-        esBaseService.addDocument();
+        esBaseService.getDocument();
     }
 
     @RequestMapping("redis")
