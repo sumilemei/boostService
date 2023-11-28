@@ -5,6 +5,8 @@ import org.apache.ibatis.annotations.Param;
 import org.apache.ibatis.annotations.Select;
 import org.springframework.stereotype.Repository;
 
+import java.util.List;
+
 /**
  * @author: taoz
  * @date: 2023/2/26 19:30
@@ -16,4 +18,7 @@ public interface HelloDao {
 
     @Select("SELECT * FROM tb_hotel where id= ${id};")
     Hotel getHotelInfo(@Param("id") Long id);
+
+    @Select("SELECT * FROM tb_hotel;")
+    List<Hotel> getAllHotel();
 }

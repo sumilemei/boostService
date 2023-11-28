@@ -6,6 +6,7 @@ import com.taoz.boost.iss.entity.Hotel;
 import com.taoz.boost.iss.entity.HotelDoc;
 import lombok.extern.slf4j.Slf4j;
 import org.elasticsearch.action.admin.indices.delete.DeleteIndexRequest;
+import org.elasticsearch.action.bulk.BulkRequest;
 import org.elasticsearch.action.delete.DeleteRequest;
 import org.elasticsearch.action.get.GetRequest;
 import org.elasticsearch.action.get.GetResponse;
@@ -20,6 +21,7 @@ import org.springframework.stereotype.Service;
 
 import javax.annotation.Resource;
 import java.io.IOException;
+import java.util.List;
 
 /**
  * @author taozheng
@@ -106,6 +108,23 @@ public class EsBaseService {
         DeleteRequest deleteRequest = new DeleteRequest("hotel","61075");
         try {
             client.delete(deleteRequest,RequestOptions.DEFAULT);
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+    }
+
+    /**
+     * 批量插入文档
+     */
+    public void bulkAddDocument(){
+        List<Hotel> allHotel = hotelDao.getAllHotel();
+        BulkRequest bulkRequest = new BulkRequest();
+        for(Hotel hotel : allHotel){
+            HotelDoc hotelDoc = new HotelDoc(hotel);
+            bulkRequest.add(new IndexRequest("hotel").id(hotelDoc.getId().toString()).source(JSON.toJSONString(hotelDoc),XContentType.JSON));
+        }
+        try {
+            client.bulk(bulkRequest,RequestOptions.DEFAULT);
         } catch (IOException e) {
             e.printStackTrace();
         }
