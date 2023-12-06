@@ -40,9 +40,10 @@ public class TestHello {
 
     @RequestMapping("esBase")
     public String esResult(){
-        //esBaseService.createIndex("test",EsIndexMappingsConstant.TEST_MAPPING);
-        String test = esBaseService.existIndex("test");
-        System.out.println(test);
+        //esBaseService.createIndex("hotel",EsIndexMappingsConstant.TEST_MAPPING);
+        //String test = esBaseService.existIndex("test");
+        esBaseService.deleteByQueryDocument();
+        //System.out.println(test);
         //esBaseService.deleteIndex("test");
         return "成功了";
     }
