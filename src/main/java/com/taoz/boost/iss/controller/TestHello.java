@@ -3,6 +3,7 @@ package com.taoz.boost.iss.controller;
 import com.alibaba.fastjson.JSON;
 import com.taoz.boost.iss.entity.People;
 import com.taoz.boost.iss.service.EsBaseService;
+import com.taoz.boost.iss.service.EsSeniorService;
 import com.taoz.boost.iss.service.HelloService;
 import com.taoz.boost.sup.result.Result;
 import com.taoz.boost.iss.entity.EsIndexMappingsConstant;
@@ -30,6 +31,8 @@ public class TestHello {
     private StringRedisTemplate stringRedisTemplate;
     @Resource
     private EsBaseService esBaseService;
+    @Resource
+    private EsSeniorService esSeniorService;
 
     @RequestMapping("name")
     public String result(){
@@ -46,6 +49,11 @@ public class TestHello {
         //System.out.println(test);
         //esBaseService.deleteIndex("test");
         return "成功了";
+    }
+
+    @RequestMapping("esSenior")
+    public void esSenior(){
+        esSeniorService.boolSearch();
     }
 
     @RequestMapping("esDocument")
