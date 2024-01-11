@@ -98,3 +98,5 @@ mybatis-plus:
       id-type: AUTO
       logic-delete-value: 1 #默认值1
       logic-not-delete-value: 0 #默认值0
+
+overtime: 1

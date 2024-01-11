@@ -1,6 +1,7 @@
 package com.taoz.boost.iss.controller;
 
 import com.alibaba.fastjson.JSON;
+import com.taoz.boost.config.ConfigUtils;
 import com.taoz.boost.iss.entity.People;
 import com.taoz.boost.iss.service.EsBaseService;
 import com.taoz.boost.iss.service.EsSeniorService;
@@ -33,6 +34,8 @@ public class TestHello {
     private EsBaseService esBaseService;
     @Resource
     private EsSeniorService esSeniorService;
+    @Resource
+    private ConfigUtils configUtils;
 
     @RequestMapping("name")
     public String result(){
@@ -59,6 +62,11 @@ public class TestHello {
     @RequestMapping("esDocument")
     public void esDocument(){
         esBaseService.bulkAddDocument();
+    }
+
+    @RequestMapping("config")
+    public String getConfig(){
+        return configUtils.getConfig("overtime");
     }
 
     @RequestMapping("redis")
