@@ -90,8 +90,10 @@ public class EsBaseService {
         } catch (IOException e) {
             e.printStackTrace();
         }
-        String document = documentFields.getSourceAsString();
-        return document;
+        if(null != documentFields){
+            return documentFields.getSourceAsString();
+        }
+        return null;
     }
 
     public void updateDocument(){

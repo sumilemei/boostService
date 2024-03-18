@@ -6,8 +6,6 @@ import com.taoz.boost.iss.entity.People;
 import com.taoz.boost.iss.service.EsBaseService;
 import com.taoz.boost.iss.service.EsSeniorService;
 import com.taoz.boost.iss.service.HelloService;
-import com.taoz.boost.sup.result.Result;
-import com.taoz.boost.iss.entity.EsIndexMappingsConstant;
 import org.springframework.data.redis.core.StringRedisTemplate;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
