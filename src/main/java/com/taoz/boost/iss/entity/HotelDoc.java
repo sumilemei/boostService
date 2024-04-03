@@ -31,7 +31,7 @@ public class HotelDoc {
         this.brand = hotel.getBrand();
         this.city = hotel.getCity();
         this.starName = hotel.getStarName();
-        this.business = hotel.getBusiness();
+        this.business = hotel.getArea();
         this.location = hotel.getLatitude() + "," + hotel.getLongitude();
         this.pic = hotel.getPic();
     }

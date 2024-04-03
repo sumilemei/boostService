@@ -13,7 +13,7 @@
     <groupId>org.taoz</groupId>
     <artifactId>SpringBootBoost</artifactId>
     <name>boost-service</name>
-    <version>1.0-SNAPSHOT</version>
+    <version>1.0</version>
     <packaging>jar</packaging>
     <description>test for Spring Boot</description>
 

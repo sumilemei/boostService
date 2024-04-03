@@ -1,6 +1,7 @@
 package com.taoz.boost.iss.entity;
 
 import com.baomidou.mybatisplus.annotation.IdType;
+import com.baomidou.mybatisplus.annotation.TableField;
 import com.baomidou.mybatisplus.annotation.TableId;
 import com.baomidou.mybatisplus.annotation.TableName;
 import lombok.Data;
@@ -12,8 +13,7 @@ import lombok.Data;
  */
 @Data
 @TableName("tb_hotel")
-public class Hotel {
-    @TableId(type = IdType.INPUT)
+public class Hotel{
     private Long id;
     private String name;
     private String address;
@@ -22,8 +22,9 @@ public class Hotel {
     private String brand;
     private String city;
     private String starName;
-    private String business;
-    private String longitude;
-    private String latitude;
+    @TableField("business")
+    private String area;
+    private Float latitude;
+    private Float longitude;
     private String pic;
 }

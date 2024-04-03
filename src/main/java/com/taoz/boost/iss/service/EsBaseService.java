@@ -38,7 +38,7 @@ public class EsBaseService {
     @Resource
     private RestHighLevelClient client;
     @Resource
-    private HelloDao hotelDao;
+    private HelloDao hotel2Dao;
 
     public void createIndex(String indexName,String mappings) {
         CreateIndexRequest createIndexRequest = new CreateIndexRequest(indexName);
@@ -71,7 +71,7 @@ public class EsBaseService {
     }
 
     public void addDocument(){
-        Hotel byId = hotelDao.getHotelInfo(61075L);
+        Hotel byId = hotel2Dao.getHotelInfo(61075L);
         HotelDoc hotelDoc = new HotelDoc(byId);
         IndexRequest indexRequest = new IndexRequest("hotel").id(hotelDoc.getId().toString());
         indexRequest.source(JSON.toJSONString(hotelDoc),XContentType.JSON);
@@ -122,7 +122,7 @@ public class EsBaseService {
      * 批量插入文档
      */
     public void bulkAddDocument(){
-        List<Hotel> allHotel = hotelDao.getAllHotel();
+        List<Hotel> allHotel = hotel2Dao.getAllHotel();
         BulkRequest bulkRequest = new BulkRequest();
         for(Hotel hotel : allHotel){
             HotelDoc hotelDoc = new HotelDoc(hotel);

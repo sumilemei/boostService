@@ -93,7 +93,6 @@ public abstract class BaseEntity implements Serializable {
     public BaseEntity() {
         this.size = 10L;
         this.current = 1L;
-        this.delFlag = "0";
     }
 
     public BaseEntity(Long id) {

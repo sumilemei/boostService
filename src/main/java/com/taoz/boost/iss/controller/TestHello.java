@@ -2,11 +2,15 @@ package com.taoz.boost.iss.controller;
 
 import com.alibaba.fastjson.JSON;
 import com.taoz.boost.config.ConfigUtils;
+import com.taoz.boost.iss.entity.Hotel;
 import com.taoz.boost.iss.entity.People;
 import com.taoz.boost.iss.service.EsBaseService;
 import com.taoz.boost.iss.service.EsSeniorService;
 import com.taoz.boost.iss.service.HelloService;
+import com.taoz.boost.iss.service.HotelService;
+import com.taoz.boost.sup.result.Result;
 import org.springframework.data.redis.core.StringRedisTemplate;
+import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
@@ -34,6 +38,8 @@ public class TestHello {
     private EsSeniorService esSeniorService;
     @Resource
     private ConfigUtils configUtils;
+    @Resource
+    private HotelService hotelService;
 
     @RequestMapping("name")
     public String result(){
@@ -87,5 +93,19 @@ public class TestHello {
         System.out.println("values:"+values);
 
         return people2;
+    }
+
+    @RequestMapping("mp")
+    public ResponseEntity<String> mpList(){
+        List<Hotel> allHotel = hotelService.getAllHotel();
+        Integer i = 0;
+        if(allHotel != null && allHotel.size() > 0){
+            for(Hotel hotel : allHotel){
+                if(hotel.getName().contains("上海")){
+                    i++;
+                }
+            }
+        }
+        return ResponseEntity.ok(i+"");
     }
 }
