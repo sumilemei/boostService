@@ -108,4 +108,16 @@ public class TestHello {
         }
         return ResponseEntity.ok(i+"");
     }
+
+    @RequestMapping("up")
+    public ResponseEntity<String> mpUpdate(){
+        hotelService.updateHotel();
+        return ResponseEntity.ok("成功");
+    }
+
+    @RequestMapping("testMap")
+    public ResponseEntity<String> testMap(){
+        String test = helloService.getTest();
+        return ResponseEntity.ok(test);
+    }
 }
