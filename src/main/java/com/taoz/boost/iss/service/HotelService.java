@@ -1,13 +1,11 @@
 package com.taoz.boost.iss.service;
 
 import com.baomidou.mybatisplus.core.conditions.query.QueryWrapper;
-import com.baomidou.mybatisplus.core.conditions.update.UpdateWrapper;
 import com.taoz.boost.iss.dao.HotelDao;
 import com.taoz.boost.iss.entity.Hotel;
 import org.springframework.stereotype.Service;
 
 import javax.annotation.Resource;
-import java.util.ArrayList;
 import java.util.List;
 
 

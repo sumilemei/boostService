@@ -22,7 +22,7 @@ public class ConfigUtils implements EnvironmentAware {
 
     @Override
     public void setEnvironment(Environment environment) {
-        log.warn("系统启动环境。。",environment);
+        log.warn("系统启动环境。。{}",environment);
         env = environment;
     }
 }
