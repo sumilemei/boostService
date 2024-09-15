@@ -5,6 +5,7 @@
     <modelVersion>4.0.0</modelVersion>
     <modules>
         <module>netty</module>
+        <module>elasticsearch</module>
     </modules>
 
     <parent>
@@ -196,7 +197,7 @@
                 <groupId>org.springframework.boot</groupId>
                 <artifactId>spring-boot-maven-plugin</artifactId>
                 <configuration>
-                    <mainClass>com.taoz.boost.Application</mainClass>
+                    <mainClass>Application</mainClass>
                 </configuration>
             </plugin>
             <plugin>
