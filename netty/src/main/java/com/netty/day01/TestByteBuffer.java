@@ -11,7 +11,7 @@ import java.nio.channels.FileChannel;
 
 @Slf4j
 public class TestByteBuffer {
-    private static final Logger logger = (Logger) LoggerFactory.getLogger(TestByteBuffer.class);
+    private static final Logger logger = LoggerFactory.getLogger(TestByteBuffer.class);
     public static void main(String[] args) {
         //获取FileChannel
         //获取方式1. 输入输出流
