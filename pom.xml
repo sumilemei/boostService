@@ -6,6 +6,8 @@
     <modules>
         <module>netty</module>
         <module>elasticsearch</module>
+        <module>biz</module>
+        <module>reflection</module>
     </modules>
 
     <parent>
