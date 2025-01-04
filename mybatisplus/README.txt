@@ -1,0 +1,3 @@
+本工程是SpringBoot框架集成MybatisPlus的演示和学习工程。
+MybatisPlus在Mybatis基础之上增强开发，尤其在单表查询和分页场景下，简化了代码开发和sql书写成本。
+本工程bean注入方式采用spring官方推荐使用的构造器注入方式。

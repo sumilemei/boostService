@@ -1,6 +1,5 @@
 package com.taoz.boost.iss.service;
 
-import com.taoz.boost.iss.dao.HelloDao;
 import lombok.extern.slf4j.Slf4j;
 import org.elasticsearch.action.admin.indices.delete.DeleteIndexRequest;
 import org.elasticsearch.client.RequestOptions;
