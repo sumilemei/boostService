@@ -2,7 +2,7 @@ package com.taoz.boost.iss.controller;
 
 import com.alibaba.fastjson.JSON;
 import com.taoz.boost.config.ConfigUtils;
-import com.taoz.boost.iss.entity.Hotel;
+import com.taoz.boost.iss.entity.Car;
 import com.taoz.boost.iss.entity.People;
 import com.taoz.boost.iss.service.*;
 import org.springframework.data.redis.core.StringRedisTemplate;
@@ -38,22 +38,12 @@ public class TestHello {
     @Resource
     private HotelService hotelService;
 
-    @RequestMapping("name")
+    @RequestMapping("car")
     public String result(){
-        String name = helloService.getName();
-        System.out.println("这里是："+name);
-        return "哈哈哈哈,"+name+"恭喜boost项目启动成功！！！";
+        Car rs4 = helloService.getName();
+        System.out.println("得到的是：" + rs4);
+        return "哈哈哈哈,座驾是"+rs4.getName()+"！！！";
     }
-
-    @PostMapping("hence")
-    @CompletePointcut
-    public String hence(People p){
-        System.out.println(p.getName());
-        String name = helloService.getName();
-        System.out.println("这里是："+name);
-        return "哈哈哈哈,"+name+"恭喜boost项目启动成功！！！";
-    }
-
 
     @RequestMapping("esBase")
     public String esResult(){
@@ -104,10 +94,10 @@ public class TestHello {
 
     @RequestMapping("mp")
     public ResponseEntity<String> mpList(){
-        List<Hotel> allHotel = hotelService.getAllHotel();
+        List<Car> allHotel = hotelService.getAllHotel();
         Integer i = 0;
         if(allHotel != null && allHotel.size() > 0){
-            for(Hotel hotel : allHotel){
+            for(Car hotel : allHotel){
                 if(hotel.getName().contains("上海")){
                     i++;
                 }

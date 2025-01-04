@@ -1,7 +1,7 @@
 package com.taoz.boost.iss.dao;
 
 import com.baomidou.mybatisplus.core.mapper.BaseMapper;
-import com.taoz.boost.iss.entity.Hotel;
+import com.taoz.boost.iss.entity.Car;
 import org.springframework.stereotype.Repository;
 
 /**
@@ -10,5 +10,5 @@ import org.springframework.stereotype.Repository;
  * @introduce:
  */
 @Repository
-public interface HotelDao extends BaseMapper<Hotel> {
+public interface HotelDao extends BaseMapper<Car> {
 }

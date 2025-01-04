@@ -8,6 +8,8 @@
         <module>elasticsearch</module>
         <module>biz</module>
         <module>reflection</module>
+        <module>concurrency</module>
+        <module>mybatisplus</module>
     </modules>
 
     <parent>
@@ -109,6 +111,11 @@
             <groupId>org.postgresql</groupId>
             <artifactId>postgresql</artifactId>
             <scope>runtime</scope>
+        </dependency>
+        <dependency>
+            <groupId>mysql</groupId>
+            <artifactId>mysql-connector-java</artifactId>
+            <version>8.0.23</version>
         </dependency>
         <!-- https://mvnrepository.com/artifact/com.alibaba/druid -->
         <dependency>

@@ -1,11 +1,8 @@
 package com.taoz.boost.iss.dao;
 
-import com.taoz.boost.iss.entity.Hotel;
-import org.apache.ibatis.annotations.Param;
+import com.taoz.boost.iss.entity.Car;
 import org.apache.ibatis.annotations.Select;
 import org.springframework.stereotype.Repository;
-
-import java.util.List;
 
 /**
  * @author: taoz
@@ -16,9 +13,6 @@ import java.util.List;
 public interface HelloDao {
     String TestHello();
 
-    @Select("SELECT * FROM tb_hotel where id= ${id};")
-    Hotel getHotelInfo(@Param("id") Long id);
-
-    @Select("SELECT * FROM tb_hotel;")
-    List<Hotel> getAllHotel();
+    @Select("SELECT * FROM car where id = 1;")
+    Car getRs4();
 }

@@ -1,7 +1,6 @@
 package com.taoz.boost.iss.service;
 
 import com.alibaba.fastjson.JSON;
-import com.taoz.boost.iss.entity.HotelDoc;
 import org.elasticsearch.action.search.SearchRequest;
 import org.elasticsearch.action.search.SearchResponse;
 import org.elasticsearch.client.RequestOptions;
@@ -27,25 +26,7 @@ public class EsSeniorService {
     private RestHighLevelClient client;
 
     public String matchAll(){
-        SearchRequest searchRequest = new SearchRequest("hotel");
-        searchRequest.source().query(QueryBuilders.matchAllQuery());
-        SearchResponse response = null;
-        try {
-             response = client.search(searchRequest, RequestOptions.DEFAULT);
-            System.out.println(response);
-            SearchHits hits = response.getHits();
-            long value = hits.getTotalHits().value;
-            System.out.println("共查询出"+value+"条数据");
-            SearchHit[] resultHits = hits.getHits();
-            for(SearchHit hit : resultHits){
-                String sourceAsString = hit.getSourceAsString();
-                HotelDoc hotelDoc = JSON.parseObject(sourceAsString, HotelDoc.class);
-                System.out.println(hotelDoc);
-            }
-        } catch (IOException e) {
-            e.printStackTrace();
-        }
-        return JSON.toJSONString(response);
+        return "";
     }
 
     /**
