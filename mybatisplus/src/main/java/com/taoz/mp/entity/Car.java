@@ -1,6 +1,8 @@
 package com.taoz.mp.entity;
 
+import com.baomidou.mybatisplus.annotation.TableField;
 import com.baomidou.mybatisplus.annotation.TableName;
+import com.taoz.mp.entity.enums.CarTypeEnum;
 import lombok.Data;
 
 import java.sql.Timestamp;
@@ -22,7 +24,9 @@ public class Car {
     private String brand;
     private String parent;
     private Timestamp birthday;
-    private Integer energy;
+    private CarTypeEnum energy;
+    @TableField(exist = false)
+    private String energyDesc;
     private Integer power;
     private Integer torque;
     private String bak1;
@@ -30,4 +34,8 @@ public class Car {
     private String introduce;
     private Integer size;
     private float score;
+
+    public void setEnergyDesc(){
+
+    }
 }

@@ -66,7 +66,7 @@ sys:
 mybatis-plus:
   configuration:
     log-impl: org.apache.ibatis.logging.stdout.StdOutImpl
-  mapper-locations: classpath:/mapper/common/**/*.xml
+  mapper-locations: classpath*:/mapper/common/**/*.xml
   type-aliases-package: com.taoz.**.entity
   type-aliases-super-type:
   global-config:
@@ -77,3 +77,5 @@ mybatis-plus:
       id-type: AUTO
       logic-delete-value: 1 #默认值1
       logic-not-delete-value: 0 #默认值0
+  type-enums-package: com.taoz.mp.entity.enums
+

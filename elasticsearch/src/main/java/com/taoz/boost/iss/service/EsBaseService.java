@@ -26,8 +26,7 @@ public class EsBaseService {
 
     @Resource
     private RestHighLevelClient client;
-    @Resource
-    private HelloDao hotel2Dao;
+
 
     public void createIndex(String indexName,String mappings) {
         CreateIndexRequest createIndexRequest = new CreateIndexRequest(indexName);
