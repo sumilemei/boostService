@@ -10,6 +10,7 @@
         <module>reflection</module>
         <module>concurrency</module>
         <module>mybatisplus</module>
+        <module>sourcecode</module>
     </modules>
 
     <parent>
