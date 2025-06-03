@@ -1,13 +1,13 @@
-  # ===================================================================
+# ===================================================================
 # spring
 # ===================================================================
 server:
-  port: 18089
+  port: 18090
 
 
 spring:
   application:
-    name: boost-mybatisplus
+    name: boost
   autoconfigure:
     exclude:
       - com.alibaba.druid.spring.boot.autoconfigure.DruidDataSourceAutoConfigure
@@ -77,5 +77,4 @@ mybatis-plus:
       id-type: AUTO
       logic-delete-value: 1 #默认值1
       logic-not-delete-value: 0 #默认值0
-  type-enums-package: com.taoz.mp.entity.enums
 

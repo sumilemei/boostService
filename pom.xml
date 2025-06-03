@@ -11,6 +11,7 @@
         <module>concurrency</module>
         <module>mybatisplus</module>
         <module>sourcecode</module>
+        <module>designPatterns</module>
     </modules>
 
     <parent>
