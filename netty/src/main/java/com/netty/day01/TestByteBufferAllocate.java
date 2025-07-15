@@ -16,10 +16,17 @@ public class TestByteBufferAllocate {
         buffer.flip();
         System.out.println(buffer.get(new byte[3]));
         System.out.println(buffer.rewind());//重复读
-        System.out.println(buffer.get(new byte[3]));
         //mark 和 reset
         //mark做一次标记，记录position的位置   reset就是将position重置到mark的位置
-        System.out.println(buffer.get(3));
+        System.out.println(buffer.get());
+        System.out.println(buffer.get());
+        buffer.mark();
+        System.out.println(buffer.get());
+        System.out.println(buffer.get());
+        buffer.reset();
+        System.out.println(buffer.get());
+        //get(i) 不会改变读索引的位置
+        System.out.println((char)buffer.get(3));
 
 
         //字符串转ByteBuffer
@@ -30,6 +37,8 @@ public class TestByteBufferAllocate {
         //ByteBuffer转字符串
         CharBuffer decode = StandardCharsets.UTF_8.decode(allocate2);
         System.out.println(decode.toString());
+
+        System.out.println("------");
 
         ByteBuffer allocate = ByteBuffer.allocate(100);
         allocate.put("hello,world\nmy name is netty\nho".getBytes());
@@ -46,6 +55,7 @@ public class TestByteBufferAllocate {
                 ByteBuffer target = ByteBuffer.allocate(length);
                 for(int j=0; j<length;j++){
                     target.put(buffer.get());
+                    System.out.print((char)buffer.get());
                 }
             }
         }

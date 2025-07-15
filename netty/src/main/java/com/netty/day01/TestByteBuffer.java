@@ -17,8 +17,8 @@ public class TestByteBuffer {
         //获取方式1. 输入输出流
         //获取方式2. RandomAccessFile
         try (FileChannel channel = new FileInputStream("./md/threeKingdoms/one.txt").getChannel()) {
-            //准备缓冲区ByteBuffer
-            ByteBuffer buffer = ByteBuffer.allocate(100);
+            //开辟缓冲区ByteBuffer,堆内存，读写效率低，会受到gc影响
+            ByteBuffer buffer = ByteBuffer.allocate(10);
             while(true){
                 //从channel读取数据，即向buffer写入数据
                 int len = channel.read(buffer);
