@@ -12,6 +12,7 @@
         <module>mybatisplus</module>
         <module>sourcecode</module>
         <module>designPatterns</module>
+        <module>Spring</module>
     </modules>
 
     <parent>
